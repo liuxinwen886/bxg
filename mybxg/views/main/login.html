@@ -13,7 +13,7 @@
 <div class="login">
     <div class="login-wrap">
         <div class="avatar">
-            <img src="../../uploads/monkey.png" class="img-circle" alt="">
+            <img src="/uploads/monkey.png" class="img-circle" alt="">
         </div>
         <form id="loginForm" class="col-xs-offset-1 col-xs-10">
             <div class="input-group input-group-lg">
@@ -34,6 +34,7 @@
 </div>
 
 <script src="/public/assets/jquery/jquery.min.js"></script>
+<script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
 <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     /*登陆*/
@@ -45,6 +46,10 @@
             dataType : 'json',
             success : function(data){
                 if(data.code == 200) {
+                    //将登陆信息存储在cookie 中
+                    //$.cookie('name', 'value', { expires: 7, path: '/' });  创建一个cookie
+                    //loginInfo 名字  cookie值转成字符串
+                    $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
                     location.href = 'main/index';
                 }
             }

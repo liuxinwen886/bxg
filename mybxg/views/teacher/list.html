@@ -22,7 +22,7 @@
                     <li class="active">讲师列表</li>
                 </ol>
                 <div class="page-title">
-                    <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+                    <a href="/teacher/add" class="btn btn-success btn-sm pull-right">添加讲师</a>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -48,20 +48,7 @@
                             </tr>
                         </thead>
                         <tbody id="teacherInfo">
-                            <!--<tr>-->
-                                <!--<td>1</td>-->
-                                <!--<td>赵玉川</td>-->
-                                <!--<td>布头儿</td>-->
-                                <!--<td>28</td>-->
-                                <!--<td>男</td>-->
-                                <!--<td>15901256171</td>-->
-                                <!--<td>-->
-                                    <!--<a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>-->
-                                    <!--<a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>-->
-                                    <!--<a href="javascript::" class="btn btn-warning btn-xs">注 销</a>-->
-                                <!--</td>-->
-                            <!--</tr>-->
-
+                            <!--挖个坑-->
                         </tbody>
                     </table>
                 </div>
@@ -151,7 +138,7 @@
             <!--自定义属性，为了加上tc_id ,tc_status 去后台拿数据-->
             <td data-tcId='{{$value.tc_id}}' data-status='{{$value.tc_status}}'>
                 <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs preview">查 看</a>
-                <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
+                <a href="/teacher/add?tc_id={{$value.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
                 <a href="javascript:;" class="btn btn-warning btn-xs eod">
                     {{if $value.tc_status == 0}}
                     注销

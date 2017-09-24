@@ -10,11 +10,15 @@ require.config({
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
         validate : 'validate/jquery-validate',
         form : 'jquery-form/jquery.form',
+        ckeditor : 'ckeditor/ckeditor',
         until : '../js/until',
         common : '../js/common',
         login : '../js/login',
+        uploadify : 'uploadify/jquery.uploadify.min',
+        region : 'jquery-region/jquery.region',
         teacherlist : '../js/teacher-list',
-        teacheradd : '../js/teacher-add'
+        teacheradd : '../js/teacher-add',
+        settings : '../js/settings'
     },
     //标准化
     shim : {
@@ -26,6 +30,12 @@ require.config({
         },
         validate : {
             deps : ['jquery']
+        },
+        uploadify : {
+            deps : ['jquery']
+        },
+        ckeditor : {
+            exports : 'CKEDITOR'
         }
     }
 })
